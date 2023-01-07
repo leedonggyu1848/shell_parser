@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dongglee <dongglee@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: dongglee <dongglee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/24 08:15:24 by yooh              #+#    #+#             */
-/*   Updated: 2023/01/06 16:53:26 by dongglee         ###   ########.fr       */
+/*   Updated: 2023/01/07 10:24:53 by dongglee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	print_process(void *context)
 	printf("\n----- pipe end -----\n");
 }
 
-
 int	main(int argc, __attribute__((unused))char **argv, __attribute__((unused))char *envp[])
 {
 	char	*input;
@@ -73,7 +72,11 @@ int	main(int argc, __attribute__((unused))char **argv, __attribute__((unused))ch
 		if (input == NULL)
 			return (1);
 		if (ft_strlen(input) == 0)
+		{
+			printf("path\n");
+			free(input);
 			continue ;
+		}
 		add_history(input);
 		processes = parse(input);
 		ft_lstiter(processes, print_process);
