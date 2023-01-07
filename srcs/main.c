@@ -73,7 +73,6 @@ int	main(int argc, __attribute__((unused))char **argv, __attribute__((unused))ch
 			return (1);
 		if (ft_strlen(input) == 0)
 		{
-			printf("path\n");
 			free(input);
 			continue ;
 		}
